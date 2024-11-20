@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letreco</title>
+    <link rel="stylesheet" href="letreco.css">
+
+</head>
+
+<body>
+
+    <button class="botao-exclamacao" onclick="mostrarPopup()">!</button>
+    <!-- Estrutura do pop-up -->
+    <div id="popup" class="popup">
+        <h1>Como Jogar</h1>
+        <p>Todos os dias, uma nova palavra aparecerá no Letreco para você adivinhar.</p>
+        <p>Você terá 6 tentativas. Cada uma delas deve ser uma palavra que exista.</p>
+        <p>Acentos e cedilha são ignorados, tanto nas tentativas, quanto na resposta.</p>
+        <p>Após chutar, as letras mudarão para indicar o quão perto você está da resposta.</p>
+        <div class="linha"></div> <!-- Linha aqui -->
+        <p>Se uma letra ficar verde, ela está presente na palavra e na posição correta.</p>
+        
+        <!-- Caixa de letras (vermelha, amarela, verde) -->
+        <div class="letras">
+            <div class="quadrado">C</div>
+            <div class="quadrado quadrado-verde">E</div>
+            <div class="quadrado">R</div>
+            <div class="quadrado">T</div>
+            <div class="quadrado">O</div>
+        </div>
+        
+        <p>Se uma letra ficar amarela, ela está presente na palavra, mas na posição errada.</p>
+        <div class="letras">
+            <div class="quadrado">Q</div>
+            <div class="quadrado">U</div>
+            <div class="quadrado">A</div>
+            <div class="quadrado quadrado-amarela">S</div>
+            <div class="quadrado">E</div>
+        </div>
+        
+        <p>Se uma letra ficar vermelha, ela NÃO está na palavra.</p>
+        <div class="letras">
+            <div class="quadrado">F</div>
+            <div class="quadrado">A</div>
+            <div class="quadrado quadrado-vermelha">L</div>
+            <div class="quadrado">H</div>
+            <div class="quadrado">A</div>
+        </div>
+    
+        <br>
+        <p style="text-align: center; color: rgba(241, 214, 178, 0.849);">Boa Sorte!</p>
+    </div>
+    
+    
+    
+    <div class="app-container"></div>
+    <div class="title-container">
+        <h1>
+            <span>L</span>
+            <span>E</span>
+            <span class="letter-yellow">T</span>
+            <span>R</span>
+            <span class="letter-red">E</span>
+            <span>C</span>
+            <span class="letter-green">O</span>
+        </h1>
+    </div>
+
+    <div class="tile-container"></div>
+
+    <div class="keybord-contairner">
+        <div id="backspaceAndEnterRow" class="keybord-row-container notAlphabetic"></div>
+        <div id="keybordFirstRow" class="keybord-row-container"></div>
+        <div id="keybordSecondRow" class="keybord-row-container"></div>
+        <div id="keybordThirdRow" class="keybord-row-container"></div>
+    </div>
+
+    <button class="btn-reset" onclick="resetPage()">Resetar Jogo</button>
+    <script src="letreco.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,264 @@
+body{
+    background-color: #F7F1E3;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.linha {
+    border-top: 2px solid rgba(0, 0, 0, 0.692); /* Linha preta de 1px */
+    margin: 20px 0; /* Adiciona um espaçamento acima e abaixo da linha */
+    opacity: 0.7; /* Deixa a linha um pouco transparente */
+}
+
+/* Estilos para a linha de quadrados de letras */
+.letras {
+    display: flex; /* Disposição horizontal dos quadrados */
+    justify-content: center; /* Centraliza os quadrados de letras */
+    gap: 5px; /* Espaçamento entre os quadrados */
+    margin: 20px 0; /* Adiciona espaço entre a explicação e os quadrados */
+}
+
+/* Estilos para cada quadrado */
+.quadrado {
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white; /* Cor da letra dentro do quadrado */
+    border: 3px solid lightgray;
+    border-radius: 8px; /* Bordas arredondadas */
+    text-transform: uppercase; /* Deixa as letras maiúsculas */
+}
+
+/* Cor para a letra verde (na posição correta) */
+.quadrado-verde {
+    background-color: #4caf50; /* Verde */
+}
+
+/* Cor para a letra amarela (na palavra, mas na posição errada) */
+.quadrado-amarela {
+    background-color: #ffeb3b; /* Amarelo */
+    color: black; /* Texto em preto para visibilidade */
+}
+
+/* Cor para a letra vermelha (não está na palavra) */
+.quadrado-vermelha {
+    background-color: #f44336; /* Vermelho */
+}
+
+
+.botao-exclamacao {
+    background-color: #add8e6; /* Azul claro */
+    color: #000000; /* Cor do texto (ponto de exclamação) em preto */
+    border: none;
+    border-radius: 8px;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/* Efeito ao passar o mouse */
+.botao-exclamacao:hover {
+    background-color: #87ceeb;
+}
+
+/* Estilos para o pop-up */
+.popup {
+    display: none; /* Escondido por padrão */
+    position: absolute;
+    top: 70px; /* Posição logo abaixo do botão */
+    right: 10px;
+    background-color: #000000ad; /* Tom pastel */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    color: rgb(252, 247, 247);
+}
+
+/* Efeito ao passar o mouse no pop-up */
+.popup:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.tile-container {
+    text-align: center;
+    width: 510px;
+    margin-top: 1rem;
+}
+
+.letter-yellow {
+    color: #c79c2e;
+}
+
+.letter-green {
+    color: #51b63e;
+}
+
+.letter-red {
+    color: #943e3c;
+}
+
+.tile-container {
+    width: 100%;
+    /* Ocupa toda a largura disponível */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centraliza as linhas no contêiner */
+    margin-top: 1rem;
+}
+
+/* Centraliza os blocos (linhas de letras) */
+.tile-row {
+    margin-bottom: 1rem;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    /* Para centralizar */
+    box-sizing: border-box;
+    gap: 0.5rem;
+    /* Espaçamento entre as colunas */
+}
+
+/* Estilização das colunas (blocos brancos) */
+.tile-column {
+    background-color: lightgray;
+    color: #252525;
+    height: 40px;
+    width: 48px;
+    border-radius: 0.25rem;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.typing {
+    border: 3px solid #252525;
+}
+
+.disbaled {
+    border: 1px solid #252525;
+}
+
+.right {
+    background-color: #51b63e;
+    color: #f4f3f1;
+}
+
+.wrong {
+    background-color: #943e3c;
+    color: #f4f3f1;
+}
+
+.displace {
+    background-color: #c79c2e;
+    color: #f4f3f1;
+}
+
+.keybord-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.keybord-row-container {
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    justify-content: center;
+    display: flex;
+}
+
+.keybord-row-container.notAlphabetic {
+    width: 100%;
+}
+
+.keybord-row-container:not(.notAlphabetic) button {
+    width: 8%;
+    height: 40px;
+    border-radius: 0.25rem;
+    margin-right: 0.25rem;
+    border: 1px solid #252525;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-reset {
+    background-color: lightgray;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-reset:hover {
+    background-color: lightgray;
+    transform: translateY(-3px);
+}
+
+.btn-reset:active {
+    background-color: lightgray;
+    transform: translateY(1px);
+}
+
+button.backspace-button {
+    background-color: lightgray;
+    color: black;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+}
+
+button.backspace-button:hover {
+    background-color: lightgray;
+}
+
+button.backspace-button:active {
+    background-color: lightgray;
+}
+
+button.enter-button {
+    background-color: lightgray;
+    color: black;
+    font-size: 20px;
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+}
+
+button.enter-button:hover {
+    background-color: lightgray;
+}
+
+button.enter-button:active {
+    background-color: lightgray;
+}
